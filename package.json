@@ -1,0 +1,9 @@
+{
+  "name": "nuber-server",
+  "version": "1.0.0",
+  "description": "Server for the (N)Uber Clone Course on Nomad Academy. GraphQL, Typescript, NodeJS",
+  "main": "index.js",
+  "repository": "https://github.com/kirim-Lee/nuber-server.git",
+  "author": "uthi1004@gmail.com",
+  "license": "MIT"
+}
