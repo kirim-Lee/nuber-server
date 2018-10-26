@@ -4,6 +4,16 @@
   "description": "Server for the (N)Uber Clone Course on Nomad Academy. GraphQL, Typescript, NodeJS",
   "main": "index.js",
   "repository": "https://github.com/kirim-Lee/nuber-server.git",
-  //"author": "uthi1004@gmail.com",
-  "license": "MIT"
+  "author": "uthi1004@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^10.12.0",
+    "nodemon": "^1.18.4",
+    "ts-node": "^7.0.1",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.1.3"
+  },
+  "scripts":{
+    "dev":"cd src && nodemon --exec ts-node index.ts -e ts,graphql"
+  }
 }
