@@ -20,3 +20,14 @@ Server for the (N)Uber Clone Course on Nomad Academy. GraphQL, Typescript, NodeJ
 ```
 yarn dev로 실행할 수 있다
 src 서버에 들어가서 nodemon으로 ts-node를 이용해서 index.ts를 실행 extension ts,graphql
+
+# dependencies
+- cors
+- graphql-yoga
+- helmet
+- morgan
+## devDependencies 
+- 설치된 dependencies에 맞는 타입 @type/dependencies
+- @types/cors
+- @types/helmet
+- @types/morgan
