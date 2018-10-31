@@ -1,6 +1,8 @@
+import bcrypt from 'bcrypt';
 import {IsEmail} from "class-validator"
-import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, BeforeInsert, BeforeUpdate } from "typeorm";
 
+const BYCRYPT_ROUNDS = 10;
 //Type ORM 
 //decorator
 //함수안에 뭘 넣는걸 의미
@@ -63,6 +65,24 @@ class User extends BaseEntity{
         return `${this.firstName} ${this.lastName}`;
     }
 
+    //새로운 오브젝트를 만들기 전에 호출되는 메서드
+    //업데이트 전에 호출되는 메서드
+    @BeforeInsert()
+    @BeforeUpdate()
+    async savePassword() : Promise<void> {
+        if(this.password){
+            const hashPassword = await this.hashPassword(this.password);
+            this.password = hashPassword
+        }
+    }
+
+    
+
+    private hashPassword(password:string):Promise<string> {
+        return bcrypt.hash(password, BYCRYPT_ROUNDS);
+    }
+    
+    
 }
 
 export default User;
