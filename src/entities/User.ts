@@ -65,6 +65,9 @@ class User extends BaseEntity{
         return `${this.firstName} ${this.lastName}`;
     }
 
+    public comparePassword(password:string):Promise<boolean>{
+        return bcrypt.compare(password, this.password)
+    }
     //새로운 오브젝트를 만들기 전에 호출되는 메서드
     //업데이트 전에 호출되는 메서드
     @BeforeInsert()

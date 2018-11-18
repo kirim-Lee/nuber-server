@@ -26,8 +26,17 @@ src 서버에 들어가서 nodemon으로 ts-node를 이용해서 index.ts를 실
 - graphql-yoga
 - helmet
 - morgan
+
 ## devDependencies 
 - 설치된 dependencies에 맞는 타입 @type/dependencies
 - @types/cors
 - @types/helmet
 - @types/morgan
+
+## devDependencies
+- graphql-tools 
+- merge-graphql-schemas
+
+## devDependencies
+- graphql-to-typescript
+- gql-merge
