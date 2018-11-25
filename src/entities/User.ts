@@ -1,6 +1,9 @@
 import bcrypt from 'bcrypt';
 import {IsEmail} from "class-validator"
-import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, BeforeInsert, BeforeUpdate } from "typeorm";
+import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, BeforeInsert, BeforeUpdate, ManyToOne, OneToMany } from "typeorm";
+
+import Chat from './Chat';
+import Message from './Message';
 
 const BYCRYPT_ROUNDS = 10;
 //Type ORM 
@@ -60,6 +63,12 @@ class User extends BaseEntity{
     
     @Column({type:"double precision"})
     lastOrientation:number;
+
+    @ManyToOne(type => Chat, chat => chat.participants)
+    chat: Chat;
+
+    @OneToMany(type => Message, message => message.user)
+    messages: Message[];
     
     get fulName():string{
         return `${this.firstName} ${this.lastName}`;
