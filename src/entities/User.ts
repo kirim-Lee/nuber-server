@@ -60,13 +60,13 @@ class User extends BaseEntity{
     @Column({type:"text", default:false})
     isTaken:string;
     
-    @Column({type:"double precision"})
+    @Column({type:"double precision", nullable:true})
     lastLng:number;
     
-    @Column({type:"double precision"})
+    @Column({type:"double precision", nullable:true})
     lastLat:number;
     
-    @Column({type:"double precision"})
+    @Column({type:"double precision", nullable:true})
     lastOrientation:number;
 
     @ManyToOne(type => Chat, chat => chat.participants)
