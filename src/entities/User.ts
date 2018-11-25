@@ -4,6 +4,8 @@ import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, CreateDateColumn, U
 
 import Chat from './Chat';
 import Message from './Message';
+import Verification from './Verification';
+import Ride from './Ride';
 
 const BYCRYPT_ROUNDS = 10;
 //Type ORM 
@@ -69,6 +71,15 @@ class User extends BaseEntity{
 
     @OneToMany(type => Message, message => message.user)
     messages: Message[];
+    
+    @OneToMany(type => Verification, verification => verification.user)
+    verifications: Verification[];
+
+    @OneToMany(type => Ride, ride => ride.passenger)
+    ridesAsPasenger: Ride[];
+
+    @OneToMany(type => Ride, ride => ride.driver)
+    ridesAsDriver: Ride[];
     
     get fulName():string{
         return `${this.firstName} ${this.lastName}`;
