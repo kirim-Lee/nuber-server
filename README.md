@@ -45,7 +45,7 @@ src 서버에 들어가서 nodemon으로 ts-node를 이용해서 index.ts를 실
 
 ### Pubilc Resolvers:
 
-- [ ] 페이스북으로 로그인/회원가입 연동 연동
+- [x] 페이스북으로 로그인/회원가입 연동 연동
 - [ ] 이메일으로 회원가입
 - [ ] 핸드폰으로 인증
 - [ ] 핸드폰 인증 완료
@@ -54,6 +54,8 @@ src 서버에 들어가서 nodemon으로 ts-node를 이용해서 index.ts를 실
 
 ### Private Resolvers:
 
+- [ ] JWT 생성
+- [ ] JWT 인증
 - [ ] 이메일 인증
 - [ ] 프로필정보 가져오기
 - [ ] 프로필정보 업데이트
