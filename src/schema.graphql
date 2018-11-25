@@ -26,16 +26,6 @@ type Place {
   updatedAt: String
 }
 
-type FacebookConnectResponse {
-  ok: Boolean!
-  error: String
-  token: String
-}
-
-type Mutation {
-  FacebookConnect(firstName: String!, lastName: String!, email: String, fbId: String!): FacebookConnectResponse!
-}
-
 type Ride {
   id: Int!
   status: String!
@@ -52,6 +42,23 @@ type Ride {
   driver: User!
   createAt: String!
   updatedAt: String
+}
+
+type EmailSignInResponse {
+  ok: Boolean!
+  error: String
+  token: String
+}
+
+type Mutation {
+  EmailSignIn(email: String!, password: String!): EmailSignInResponse!
+  FacebookConnect(firstName: String!, lastName: String!, email: String, fbId: String!): FacebookConnectResponse!
+}
+
+type FacebookConnectResponse {
+  ok: Boolean!
+  error: String
+  token: String
 }
 
 type User {
