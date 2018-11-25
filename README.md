@@ -40,3 +40,38 @@ src 서버에 들어가서 nodemon으로 ts-node를 이용해서 index.ts를 실
 ## devDependencies
 - graphql-to-typescript
 - gql-merge
+
+## Resolvers
+
+### Pubilc Resolvers:
+
+- [ ] 페이스북으로 로그인/회원가입 연동 연동
+- [ ] 이메일으로 회원가입
+- [ ] 핸드폰으로 인증
+- [ ] 핸드폰 인증 완료
+- [ ] 이메일 회원가입 완료
+---
+
+### Private Resolvers:
+
+- [ ] 이메일 인증
+- [ ] 프로필정보 가져오기
+- [ ] 프로필정보 업데이트
+- [ ] 드라이버/탑승자 토글
+- [ ] Report Location / Orientation
+- [ ] 장소정보 추가
+- [ ] 장소정보 업데이트
+- [ ] 장소정보 삭제
+- [ ] 근처 운전자 보기
+- [ ] Subscribe 으로 근처 운전자 보기
+- [ ] 탑승요청
+- [ ] 근처 탑승요청 받기
+- [ ] Subscribe to Nearby Ride Requests
+- [ ] Subscribe to Ride Status
+- [ ] 채팅방 메세지 받기
+- [ ] 채팅방 들어가기
+- [ ] 메세지 보내기
+
+## Code Challenge
+- [ ] 탑승기록 보기
+- [ ] 탑승상세정보보기
