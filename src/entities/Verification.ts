@@ -1,4 +1,4 @@
-import {Column, Entity, BaseEntity, PrimaryGeneratedColumn, CreateDateColumn, BeforeInsert, ManyToOne} from 'typeorm';
+import {Column, Entity, BaseEntity, PrimaryGeneratedColumn, CreateDateColumn, BeforeInsert} from 'typeorm';
 import { verificationTarget } from '../types/types';
 
 

@@ -4,7 +4,6 @@ import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, CreateDateColumn, U
 
 import Chat from './Chat';
 import Message from './Message';
-import Verification from './Verification';
 import Ride from './Ride';
 
 const BYCRYPT_ROUNDS = 10;

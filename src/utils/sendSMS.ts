@@ -6,7 +6,7 @@ export const sendSMS = (to: string, body: string): Promise<any> => {
     return twilioClient.messages.create({
         body,
         to,
-        from : process.env.TWILIO_TOKEN
+        from : process.env.TWILIO_PHONE
     })
 }
 
