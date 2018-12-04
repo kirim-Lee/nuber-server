@@ -42,6 +42,8 @@ src 서버에 들어가서 nodemon으로 ts-node를 이용해서 index.ts를 실
 - gql-merge
 
 ## Resolvers
+- 인증에 사용된 패키지
+- jsonwebtoken
 
 ### Pubilc Resolvers:
 
@@ -49,7 +51,7 @@ src 서버에 들어가서 nodemon으로 ts-node를 이용해서 index.ts를 실
 - [x] 이메일으로 회원가입
 - [x] 핸드폰으로 인증
 - [x] 핸드폰 인증 완료
-- [ ] 이메일 회원가입 완료
+- [x] 이메일 회원가입 완료
 ---
 
 ### Authentication:
