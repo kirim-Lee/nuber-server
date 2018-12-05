@@ -56,8 +56,8 @@ src 서버에 들어가서 nodemon으로 ts-node를 이용해서 index.ts를 실
 
 ### Authentication:
 
-- [ ] JWT 생성
-- [ ] JWT 인증
+- [x] JWT 생성(create)
+- [x] JWT 인증(verify)
 
 ---
 
