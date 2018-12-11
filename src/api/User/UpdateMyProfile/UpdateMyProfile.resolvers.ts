@@ -19,7 +19,6 @@ const resolvers: Resolvers = {
                 delete notNull["password"];                
             }
             try {
-                
                 await User.update({id:user.id}, { ...notNull });
                 return {
                     ok: true,

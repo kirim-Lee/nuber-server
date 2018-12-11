@@ -50,14 +50,14 @@ class User extends BaseEntity{
     @UpdateDateColumn()    
     updatedAt:string;
 
-    @Column({type:"text", default:false})
-    isDriving:string;
+    @Column({type:"boolean", default:false})
+    isDriving:boolean;
     
-    @Column({type:"text", default:false})
-    isRiding:string;
+    @Column({type:"boolean", default:false})
+    isRiding:boolean;
     
-    @Column({type:"text", default:false})
-    isTaken:string;
+    @Column({type:"boolean", default:false})
+    isTaken:boolean;
     
     @Column({type:"double precision", nullable:true})
     lastLng:number;
