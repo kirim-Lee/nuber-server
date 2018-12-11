@@ -29,7 +29,7 @@ const resolvers: Resolvers = {
                                 payload: newUser.email,
                                 target: 'EMAIL'
                             }).save();
-                            await sendVerificationEmail(newUser.fulName, emailVerification.key); 
+                            await sendVerificationEmail(newUser.fullName, emailVerification.key); 
                         }
                         const token = createJWT(newUser.id);
                         return {

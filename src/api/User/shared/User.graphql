@@ -2,7 +2,7 @@ type User{
     id:Int!
     fbId:String
     email:String
-    veryfiedEmail:Boolean!
+    verifiedEmail:Boolean!
     firstName:String!
     lastName:String!
     age:Int

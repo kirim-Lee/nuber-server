@@ -18,7 +18,7 @@ class User extends BaseEntity{
     email : string | null;
 
     @Column({type:"boolean", default:false})
-    veryfiedEmail:boolean;
+    verifiedEmail:boolean;
 
     @Column({type:"text"})
     firstName:string;
@@ -80,7 +80,7 @@ class User extends BaseEntity{
     @OneToMany(type => Ride, ride => ride.driver)
     ridesAsDriver: Ride[];
     
-    get fulName():string{
+    get fullName():string{
         return `${this.firstName} ${this.lastName}`;
     }
 
