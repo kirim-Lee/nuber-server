@@ -64,7 +64,7 @@ src 서버에 들어가서 nodemon으로 ts-node를 이용해서 index.ts를 실
 ### Private Resolvers:
 
 - [x] 이메일 인증요청 : mailgun-js / mailgun 
-- [ ] 이메일 인증완료 : mailgun-js / mailgun 
+- [x] 이메일 인증완료 : mailgun-js / mailgun 
 - [x] 프로필정보 가져오기
 - [ ] 프로필정보 업데이트
 - [ ] 드라이버/탑승자 토글

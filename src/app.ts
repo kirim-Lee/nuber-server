@@ -30,7 +30,6 @@ class App{
         const token = req.get("X-JWT");
         if (token) {
             const user = await decodeJWT(token);
-
             if (user) {
                 req.user = user;
             } else {
