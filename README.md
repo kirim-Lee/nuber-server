@@ -69,8 +69,9 @@ src 서버에 들어가서 nodemon으로 ts-node를 이용해서 index.ts를 실
 - [x] 프로필정보 업데이트
 - [x] 드라이버/탑승자 토글
 - [x] Report Location / Orientation
-- [ ] 장소정보 추가
-- [ ] 장소정보 업데이트
+- [x] 장소정보 추가
+- [x] 장소정보 업데이트 // isFav, name만 변경
+- [ ] 내 장소들 가져오기
 - [ ] 장소정보 삭제
 - [ ] 근처 운전자 보기
 - [ ] Subscribe 으로 근처 운전자 보기
