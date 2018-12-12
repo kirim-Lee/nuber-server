@@ -1,4 +1,5 @@
-import {Entity, BaseEntity, PrimaryGeneratedColumn, CreateDateColumn, Column} from 'typeorm';
+import {Entity, BaseEntity, PrimaryGeneratedColumn, CreateDateColumn, Column, ManyToOne} from 'typeorm';
+import User from './User';
 
 
 @Entity()
@@ -12,13 +13,16 @@ class Place extends BaseEntity{
     lat: number;
 
     @Column({type: "double precision", default: 0})
-    lng: string;
+    lng: number;
 
     @Column({type: "text"})
     address: string;
 
     @Column({type: "boolean", default: false})
-    isFav: string;
+    isFav: boolean;
+
+    @ManyToOne(type => User, user => user.places)
+    user: User
 
     @CreateDateColumn() createdAt:string;
     @CreateDateColumn() upadteAt:string;

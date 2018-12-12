@@ -5,6 +5,7 @@ import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, CreateDateColumn, U
 import Chat from './Chat';
 import Message from './Message';
 import Ride from './Ride';
+import Place from './Place';
 
 const BYCRYPT_ROUNDS = 10;
 //Type ORM 
@@ -79,6 +80,9 @@ class User extends BaseEntity{
 
     @OneToMany(type => Ride, ride => ride.driver)
     ridesAsDriver: Ride[];
+
+    @OneToMany(type => Place, place => place.user)
+    places: Place[];
     
     get fullName():string{
         return `${this.firstName} ${this.lastName}`;
