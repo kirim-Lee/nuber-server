@@ -22,7 +22,7 @@ class Verification extends BaseEntity{
     verified: boolean
 
     @CreateDateColumn() createdAt:string;
-    @CreateDateColumn() upadteAt:string;
+    @CreateDateColumn() upadtedAt:string;
 
     @BeforeInsert() 
     createKey(): void {

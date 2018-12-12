@@ -46,7 +46,7 @@ class User extends BaseEntity{
     profilePhoto:string;
 
     @CreateDateColumn()    
-    cerateAt:string;
+    createdAt:string;
 
     @UpdateDateColumn()    
     updatedAt:string;
@@ -76,10 +76,10 @@ class User extends BaseEntity{
     messages: Message[];
 
     @OneToMany(type => Ride, ride => ride.passenger)
-    ridesAsPasenger: Ride[];
+    rideAsPassenger: Ride[];
 
     @OneToMany(type => Ride, ride => ride.driver)
-    ridesAsDriver: Ride[];
+    rideAsDriver: Ride[];
 
     @OneToMany(type => Place, place => place.user)
     places: Place[];

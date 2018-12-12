@@ -7,7 +7,7 @@ type Place{
     isFav:Boolean!
     userId:Int!
     user: User!
-    createAt:String!
+    createdAt:String!
     updatedAt:String
 }
 

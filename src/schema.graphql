@@ -2,7 +2,7 @@ type Chat {
   id: Int!
   messages: [Message]!
   participants: [User]!
-  createAt: String!
+  createdAt: String!
   updatedAt: String
 }
 
@@ -11,7 +11,7 @@ type Message {
   text: String!
   chat: Chat!
   user: User!
-  createAt: String!
+  createdAt: String!
   updatedAt: String
 }
 
@@ -55,6 +55,7 @@ type GetMyPlacesResponse {
 type Query {
   GetMyPlaces: GetMyPlacesResponse!
   GetMyProfile: GetMyProfileResponse!
+  GetNearByDrivers: GetNearbyDriversResponse!
   user: User
 }
 
@@ -67,7 +68,7 @@ type Place {
   isFav: Boolean!
   userId: Int!
   user: User!
-  createAt: String!
+  createdAt: String!
   updatedAt: String
 }
 
@@ -85,7 +86,7 @@ type Ride {
   duration: String!
   passenger: User!
   driver: User!
-  createAt: String!
+  createdAt: String!
   updatedAt: String
 }
 
@@ -124,6 +125,12 @@ type GetMyProfileResponse {
   user: User
 }
 
+type GetNearbyDriversResponse {
+  ok: Boolean!
+  error: String
+  drivers: [User]
+}
+
 type ReportMovementResponse {
   ok: Boolean!
   error: String
@@ -146,7 +153,7 @@ type User {
   phoneNumber: String
   verifiedPhoneNumber: Boolean!
   profilePhoto: String
-  cerateAt: String!
+  createdAt: String!
   updatedAt: String
   fullName: String
   isDriving: Boolean!
@@ -156,7 +163,7 @@ type User {
   lastLat: Float
   lastOrientation: Float
   chat: Chat
-  message: [Message]
+  messages: [Message]
   rideAsPassenger: [Ride]
   rideAsDriver: [Ride]
   places: [Place]

@@ -16,8 +16,11 @@ class Message extends BaseEntity{
     @ManyToOne(type => User, user => user.messages)
     user: User;
 
-    @CreateDateColumn() createdAt:string;
-    @CreateDateColumn() upadteAt:string;
+    @CreateDateColumn() 
+    createdAt:string;
+
+    @CreateDateColumn() 
+    updatedAt:string;
 
 
 }

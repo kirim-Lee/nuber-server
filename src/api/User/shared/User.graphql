@@ -10,7 +10,7 @@ type User{
     phoneNumber:String
     verifiedPhoneNumber:Boolean!
     profilePhoto:String
-    cerateAt:String!
+    createdAt:String!
     updatedAt:String
     fullName:String
     isDriving:Boolean!
@@ -20,7 +20,7 @@ type User{
     lastLat:Float
     lastOrientation:Float
     chat:Chat
-    message:[Message]
+    messages:[Message]
     rideAsPassenger:[Ride]
     rideAsDriver:[Ride]
     places:[Place]
