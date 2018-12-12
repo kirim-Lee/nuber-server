@@ -71,7 +71,7 @@ src 서버에 들어가서 nodemon으로 ts-node를 이용해서 index.ts를 실
 - [x] Report Location / Orientation
 - [x] 장소정보 추가
 - [x] 장소정보 업데이트 // isFav, name만 변경
-- [ ] 장소 정보 삭제
+- [x] 장소 정보 삭제
 - [ ] 내 장소들 가져오기
 - [ ] 근처 운전자 보기
 - [ ] Subscribe 으로 근처 운전자 보기
