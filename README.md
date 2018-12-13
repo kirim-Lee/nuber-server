@@ -75,7 +75,7 @@ src 서버에 들어가서 nodemon으로 ts-node를 이용해서 index.ts를 실
 - [x] 내 장소들 가져오기
 - [x] 근처 운전자 보기
 - [x] Subscribe 으로 근처 운전자 보기
-- [ ] 탑승요청
+- [x] 탑승요청
 - [ ] 근처 탑승요청 받기
 - [ ] Subscribe to Nearby Ride Requests
 - [ ] Subscribe to Ride Status
