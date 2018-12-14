@@ -80,6 +80,11 @@ type GetNearByRideResponse {
   ride: Ride
 }
 
+type Subscription {
+  NearbyRideSubscription: Ride
+  DriverSubscription: User
+}
+
 type RequestRideResponse {
   ok: Boolean!
   error: String
@@ -113,10 +118,6 @@ type CompletePhoneVerificationResponse {
   ok: Boolean!
   error: String
   token: String
-}
-
-type Subscription {
-  DriverSubscription: User
 }
 
 type EmailSignInResponse {
