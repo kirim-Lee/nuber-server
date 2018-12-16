@@ -3,6 +3,7 @@ import authResolver from "../../../utils/resolverMiddleware";
 import User from "../../../entities/User";
 import { UpdateRideStatusMutationArgs, UpdateRideStatusResponse } from "../../../types/graph";
 import Ride from "../../../entities/Ride";
+import Chat from "../../../entities/Chat";
 
 const resolvers: Resolvers = {
     Mutation: {
@@ -16,11 +17,17 @@ const resolvers: Resolvers = {
                         ride = await Ride.findOne({
                             id: args.rideId,
                             status: "REQUESTING"
-                        });
+                        }, {relations: ["passenger"]});
                         if (ride) {
                             ride.driver = user;
                             user.isTaken = true;
                             user.save();
+                            // 탑승요청 상태로 바뀔 때 채팅방을 만듬
+                            await Chat.create({
+                                driver: user,
+                                passenger: ride.passenger
+                            }).save();
+
                         }
                     } else {
                         ride = await Ride.findOne({

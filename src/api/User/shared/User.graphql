@@ -20,6 +20,8 @@ type User{
     lastLat:Float
     lastOrientation:Float
     chat:Chat
+    chatsAsPassenger: [Chat]
+    chatsAsDriver: [Chat]
     messages:[Message]
     rideAsPassenger:[Ride]
     rideAsDriver:[Ride]
