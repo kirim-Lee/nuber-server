@@ -23,10 +23,12 @@ const resolvers: Resolvers = {
                             user.isTaken = true;
                             user.save();
                             // 탑승요청 상태로 바뀔 때 채팅방을 만듬
-                            await Chat.create({
+                            const chat = await Chat.create({
                                 driver: user,
-                                passenger: ride.passenger
+                                passenger: ride.passenger                                
                             }).save();
+                            ride.chat = chat;
+                            ride.save();
 
                         }
                     } else {
