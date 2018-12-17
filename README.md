@@ -83,8 +83,8 @@ src 서버에 들어가서 nodemon으로 ts-node를 이용해서 index.ts를 실
 - [x] Subscribe 탑승상태
 - [x] 채팅방 만들기
 - [x] 채팅방 정보 조회
-- [ ] 메세지 보내기
-- [ ] 채팅 메세지 subscribe
+- [x] 메세지 보내기
+- [x] 채팅 메세지 subscribe
 
 ## Code Challenge
 - [ ] 탑승기록 보기
