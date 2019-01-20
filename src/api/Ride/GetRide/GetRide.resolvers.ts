@@ -11,9 +11,7 @@ const resolvers: Resolvers = {
             try {
                 const ride = await Ride.findOne({
                     id: args.rideId
-                },{
-                    relations:["passenger", "driver"]
-                });
+                },{relations: ["passenger", "driver", "chat"]});
                 if(ride){
                     if(ride.passengerId === user.id || ride.driverId === user.id) {
                         return {

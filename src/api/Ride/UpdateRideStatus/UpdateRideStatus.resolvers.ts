@@ -17,7 +17,7 @@ const resolvers: Resolvers = {
                         ride = await Ride.findOne({
                             id: args.rideId,
                             status: "REQUESTING"
-                        }, {relations: ["passenger"]});
+                        }, {relations: ["passenger", "driver", "chat"]});
                         if (ride) {
                             ride.driver = user;
                             user.isTaken = true;
@@ -35,32 +35,46 @@ const resolvers: Resolvers = {
                         ride = await Ride.findOne({
                             id: args.rideId,
                             driver: user
-                        });
+                        }, {relations: ["passenger", "driver", "chat"]});
                     }
                     if(ride) {
                         ride.status = args.status;
                         ride.save();
                         pubSub.publish("rideUpdate", {RideStatusSubscription: ride});
+
+                        if(args.status === "FINISHED") {
+                            const passengerUser = await User.findOne({id: ride.passengerId});
+                            if (passengerUser) {
+                                passengerUser.isRiding = false;
+                                passengerUser.save();
+                            }
+                            user.isTaken = false;
+                            user.save();
+                        }
                         return {
                             ok: true,
-                            error: null
+                            error: null,
+                            rideId: ride.id
                         }
                     } else {
                         return {
                             ok: false,
-                            error: "Can\'t update ride"
+                            error: "Can\'t update ride",
+                            rideId: null
                         }
                     }
                 } catch (error) {
                     return {
                         ok: false,
-                        error: error.message
+                        error: error.message,
+                        rideId: null
                     }
                 }
             } else {
                 return {
                     ok: false,
-                    error: "You are not driver"
+                    error: "You are not driver",
+                    rideId: null
                 }
             }
         })

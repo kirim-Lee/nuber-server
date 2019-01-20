@@ -5,7 +5,7 @@ type GetChatResponse {
 }
 
 type Query {
-  GetChat(chatId: Int!): GetChatResponse!
+  GetChat(chatId: Int): GetChatResponse!
   GetMyPlaces: GetMyPlacesResponse!
   GetNearByRide: GetNearByRideResponse!
   GetRide(rideId: Int!): GetRideResponse!
@@ -64,6 +64,7 @@ type Message {
   text: String!
   chatId: Int
   chat: Chat!
+  userId: Int
   user: User!
   createdAt: String!
   updatedAt: String
@@ -138,7 +139,7 @@ type Ride {
   passengerId: Int!
   passenger: User!
   driverId: Int
-  driver: User!
+  driver: User
   createdAt: String!
   updatedAt: String
 }
@@ -146,6 +147,7 @@ type Ride {
 type UpdateRideStatusResponse {
   ok: Boolean!
   error: String
+  rideId: Int
 }
 
 enum StatusOptions {
