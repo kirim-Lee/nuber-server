@@ -9,7 +9,7 @@ const resolvers: Resolvers = {
         GetChat: authResolver(async(_, args: GetChatQueryArgs, { req }): Promise<GetChatResponse> => {
             const user: User= req.user;
             try {
-                const chat = await Chat.findOne({id: args.chatId},
+                const chat = await Chat.findOne({id: args.chatId || 0},
                     {relations: ["passenger", "driver", "ride", "messages"]});
                 if (chat) {
                     if (chat.passengerId === user.id || chat.driverId === user.id) {
