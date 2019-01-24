@@ -89,3 +89,8 @@ src 서버에 들어가서 nodemon으로 ts-node를 이용해서 index.ts를 실
 ## Code Challenge
 - [ ] 탑승기록 보기
 - [ ] 탑승상세정보보기
+
+# 배포
+## now secret 추가
+- now secrets add db_user(추가할이름) "이름"
+- 부를땐 @db_user

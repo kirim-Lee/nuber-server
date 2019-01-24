@@ -13,11 +13,29 @@ const resolvers: Resolvers = {
         ): Promise<UpdateMyProfileResponse> => {
             const user: User = req.user;
             const notNull = cleanNullArgs(args);
-            if(notNull["password"] && notNull["password"] !== null) {
-                user.password = notNull["password"];
-                user.save();
-                delete notNull["password"];                
+            if("password1" in notNull) {
+                const checkPassword = await user.comparePassword(notNull["password1"]);
+                if (checkPassword) {
+                    if(notNull["password2"] === notNull["password3"]) {
+                        user.password = notNull["password2"];
+                        user.save();
+                        delete notNull["password1"];
+                    } else {
+                        return {
+                            ok: false,
+                            error: 'not same after password'
+                        }
+                    }
+                    
+                } else {
+                    return {
+                        ok: false,
+                        error: 'you entered wrong password'
+                    }
+                }
             }
+            delete notNull["password2"];
+            delete notNull["password3"];
             try {
                 await User.update({id:user.id}, { ...notNull });
                 return {

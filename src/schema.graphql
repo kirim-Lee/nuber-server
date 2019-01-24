@@ -43,7 +43,7 @@ type Mutation {
   RequestEmailVerification: RequestEmailVerificationResponse!
   StartPhoneVerification(phoneNumber: String!): StartPhoneVerificationResponse!
   ToggleDrivingMode: ToggleDrivingModeResponse!
-  UpdateMyProfile(firstName: String, lastName: String, email: String, password: String, profilePhoto: String, age: Int): UpdateMyProfileResponse!
+  UpdateMyProfile(firstName: String, lastName: String, email: String, password1: String, password2: String, password3: String, profilePhoto: String, age: Int): UpdateMyProfileResponse!
 }
 
 type Chat {
